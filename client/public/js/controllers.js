@@ -1,21 +1,22 @@
 /**
+ * Created by David on 01/06/2014.
  *
- * Middle-man functions controlling the way the data is gathered and
+ * Middle-man functions controlling the way the data to gathered and
  * passed to the presentation layer.
  *
  */
 
 'use strict';
 
-var exposureControllers = angular.module('exposureControllers', []);
+var controllers = angular.module('controllers', []);
 
-exposureControllers.controller('UserListCtrl',
+controllers.controller('UsersListCtrl',
 	[
 		'$scope',
-		'UserServices',
-		function($scope, UserList)
+		'User',
+		function($scope, User)
 		{
-			$scope.users = UserList.getUsers();
+			$scope.users = User.list();
 		}
 	]
 );

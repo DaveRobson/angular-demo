@@ -1,17 +1,27 @@
 'use strict';
 
-var exposureApp = angular.module('exposureApp', ['ngRoute']);
+var demoApp = angular.module('demoApp', [
+	'ngRoute',
+	'controllers',
+	'services'
+	]);
 
-exposureApp.config(['$routeProvider',
-	function($routeProvider)
+demoApp.config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider)
 	{
 		$routeProvider.when
 		(
 			'/users',
 			{
-				templateUrl: 'partials/users.html',
+				templateUrl: 'partials/users',
 				controller: 'UsersListCtrl'
 			}
-		)
+
+		).otherwise(
+		{
+			redirectTo: '/'
+		});
+
+		$locationProvider.html5Mode(true);
 	}
 ]);

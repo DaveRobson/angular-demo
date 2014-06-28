@@ -8,7 +8,7 @@ var express = require('express'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-
+	http = require('http'),
 	//server url routing
 	routes = require('./server/routes'),
 
@@ -16,11 +16,7 @@ var express = require('express'),
 	apiRoutes = require('./server/routes/api'),
 	path = require('path');
 
-
-var server = express();
-
-var router = express.Router();
-
+var server = module.exports = express();
 
 server.set('port', process.env.PORT || 3000);
 server.set('views', __dirname + '/server/views');
@@ -30,15 +26,17 @@ server.use(morgan());
 server.use(bodyParser());
 server.use(methodOverride());
 server.use(express.static(path.join(__dirname, '/client/public')));
+server.use(express.Router());
 
 
 server.get('/', routes.index);
+server.get('/partials/:name', routes.partials);
 
-apiRoutes(router);
+apiRoutes(server);
 
-server.use('/', router);
+server.get('*', routes.index);
 
 
-server.listen(server.get('port'), function(){
-  console.log("Express server listening on port " + server.get('port'));
+http.createServer(server).listen(server.get('port'), function () {
+	console.log('Express server listening on port ' + server.get('port'));
 });

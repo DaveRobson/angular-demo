@@ -1,8 +1,13 @@
 doctype 5
 html
-  head(ng-app)
+  head(lang='en')
+    meta(charset='utf8')
     title= title
-    link(rel='stylesheet', href='/css/style.css')
-    script(src='/components/angular/angular.min.js')
-  body
+    base(href='/')
+    //link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    //script(src='/components/jquery/dist/jquery.min.js')
+
+
+  body(ng-app='demoApp')
     block content

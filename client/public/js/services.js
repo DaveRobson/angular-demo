@@ -1,14 +1,16 @@
 /**
- * webservice access object any functions dealing with
+ * Created by David on 01/06/2014.
+ *
+ * webservice access object (wsao) any functions dealing with
  * communication to webservices.
  *
  */
 
 'use strict';
 
-var userServices = angular.module('userServices', ['ngResource']);
+var services = angular.module('services', ['ngResource']);
 
-userServices.factory('User',
+services.factory('User',
 	[
 		'$resource',
 		function($resource)

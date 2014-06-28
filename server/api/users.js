@@ -28,6 +28,19 @@ users =
 	},
 	read: function(req, res)
 	{
+		var userId = req.params.userId;
+
+		for(var key in userList)
+		{
+			console.log(userId)
+			if(userList[key].userId == userId)
+			{
+				res.json(userList[key]);
+				return;
+			}
+		}
+
+		//user not found
 		res.send(404, 'Something broke!');
 	},
 	create: function(req, res)

@@ -1,0 +1,27 @@
+'use strict';
+
+var demoApp = angular.module('demoApp', [
+	'ngRoute',
+	'controllers',
+	'services'
+	]);
+
+demoApp.config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider)
+	{
+		$routeProvider.when
+		(
+			'/users',
+			{
+				templateUrl: 'partials/users',
+				controller: 'UsersListCtrl'
+			}
+
+		).otherwise(
+		{
+			redirectTo: '/'
+		});
+
+		$locationProvider.html5Mode(true);
+	}
+]);

@@ -8,14 +8,31 @@ module.exports = function(grunt)
 	grunt.initConfig(
 	{
 		pkg: grunt.file.readJSON('package.json'),
-		develop:
+
+		express:
 		{
-			server:
+			dev:
 			{
-				file: 'server.js'
+				options:
+				{
+					script: 'server.js'
+				}
+			}
+		},
+		watch:
+		{
+			express:
+			{
+				files: ['./client/public/js/*.js'],
+				tasks: ['express:dev'],
+				options:
+				{
+					spawn: false
+				}
 			}
 		}
+
 	});
 
-	grunt.registerTask('default', ['develop']);
+	grunt.registerTask('default', ['express', 'watch']);
 }

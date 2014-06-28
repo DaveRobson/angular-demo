@@ -14,8 +14,7 @@ var express = require('express'),
 
 	//api restful routes
 	apiRoutes = require('./server/routes/api'),
-	path = require('path'),
-	http = require('http');
+	path = require('path');
 
 
 var server = express();
@@ -40,6 +39,6 @@ apiRoutes(router);
 server.use('/', router);
 
 
-http.createServer(server).listen(server.get('port'), function(){
+server.listen(server.get('port'), function(){
   console.log("Express server listening on port " + server.get('port'));
 });

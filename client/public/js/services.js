@@ -11,15 +11,18 @@
 var services = angular.module('services', ['ngResource']);
 
 services.factory('User',
-	[
-		'$resource',
 		function($resource)
 		{
-			return $resource('/api/users', {},
+			return{
+				list: $resource('/api/users', {},
 				{
-					list: { method:'GET', isArray: true}
-				});
-		}
-	]
-)
+					query: { method: 'GET', isArray: true}
+				}),
+				read: $resource('/api/users/:userId', {},
+				{
+					query: { method: 'GET', params: {userId: '@userId'}}
+				})
+			}
+
+		});
 

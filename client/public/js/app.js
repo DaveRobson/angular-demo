@@ -17,7 +17,18 @@ demoApp.config(['$routeProvider', '$locationProvider',
 				controller: 'UsersListCtrl'
 			}
 
-		).otherwise(
+		)
+		.when
+		(
+			'/users/:id',
+			{
+				templateUrl: 'partials/userDetail',
+				controller: 'UserDetailCtrl'
+			}
+
+		)
+
+		.otherwise(
 		{
 			redirectTo: '/'
 		});

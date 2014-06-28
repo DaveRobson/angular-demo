@@ -1,11 +1,17 @@
 extends layout
 
 block content
-    ul
-        li
-            a(href='/') Home
-        li
-            a(href='/users') Users
+    nav(role='navigation').navbar.navbar-default
+        div.container-fluid
+            h1 Demo App
+        div.container-fluid
+            div.navbar-header
+            div.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/users') Users
 
     div(ng-view)
 

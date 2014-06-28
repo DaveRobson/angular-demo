@@ -1,9 +1,8 @@
 div.container-fluid
     div.row
-        div.col-md-2
         div.col-md-10
             ul.users
                 li(ng-repeat="user in users")
-                    a(href="#/api/users/{{user.userId}}")
+                    a(href="#/users/{{user.userId}}")
                         {{user.firstname}} {{user.lastname}}
 

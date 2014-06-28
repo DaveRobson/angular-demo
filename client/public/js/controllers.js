@@ -16,7 +16,19 @@ controllers.controller('UsersListCtrl',
 		'User',
 		function($scope, User)
 		{
-			$scope.users = User.list();
+			$scope.users = User.list.query();
+		}
+	]
+);
+
+controllers.controller('UserDetailCtrl',
+	[
+		'$scope',
+		'$routeParams',
+		'User',
+		function($scope, $routeParams, User)
+		{
+			$scope.userDetail = User.read.query({userId: $routeParams.id});
 		}
 	]
 );

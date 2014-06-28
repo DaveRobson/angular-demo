@@ -1,0 +1,23 @@
+{
+  "name": "toolbox",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.2.0",
+    "express": "^4.3.1",
+    "jade": "~0.34.0",
+    "method-override": "^1.0.2",
+    "morgan": "^1.1.1",
+    "serve-favicon": "^2.0.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-develop": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "request": "~2.27.0",
+    "load-grunt-tasks": "~0.2.0"
+  }
+}

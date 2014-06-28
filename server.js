@@ -8,14 +8,19 @@ var express = require('express'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-    path = require('path'),
-	http = require('http');
 
 	//server url routing
-	routes = require('./server/routes');
+	routes = require('./server/routes'),
+
+	//api restful routes
+	apiRoutes = require('./server/routes/api'),
+	path = require('path'),
+	http = require('http');
 
 
 var server = express();
+
+var router = express.Router();
 
 
 server.set('port', process.env.PORT || 3000);
@@ -29,6 +34,11 @@ server.use(express.static(path.join(__dirname, '/client/public')));
 
 
 server.get('/', routes.index);
+
+apiRoutes(router);
+
+server.use('/', router);
+
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log("Express server listening on port " + server.get('port'));

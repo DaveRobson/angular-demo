@@ -16,7 +16,6 @@ demoApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'partials/index',
 				controller: 'IndexCtrl'
 			}
-
 		)
 		.when
 		(
@@ -25,7 +24,6 @@ demoApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'partials/users',
 				controller: 'UsersListCtrl'
 			}
-
 		)
 		.when
 		(
@@ -34,9 +32,7 @@ demoApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'partials/userDetail',
 				controller: 'UserDetailCtrl'
 			}
-
 		)
-
 		.otherwise(
 		{
 			redirectTo: '/'

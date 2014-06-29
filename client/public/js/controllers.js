@@ -1,7 +1,6 @@
 /**
- * Created by David on 01/06/2014.
  *
- * Middle-man functions controlling the way the data to gathered and
+ * Middle-man functions controlling the way the data is gathered and
  * passed to the presentation layer.
  *
  */

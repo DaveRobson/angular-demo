@@ -1,5 +1,4 @@
 /**
- * Created by David on 01/06/2014.
  *
  * webservice access object (wsao) any functions dealing with
  * communication to webservices.
@@ -23,6 +22,5 @@ services.factory('User',
 					query: { method: 'GET', params: {userId: '@userId'}}
 				})
 			}
-
 		});
 

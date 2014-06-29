@@ -1,19 +1,21 @@
 extends layout
 
 block content
-    nav(role='navigation').navbar.navbar-default
-        div.container-fluid
+    nav(role='navigation').navbar.navbar-demo
+        div.container.header-bottom-layer
             h1 Demo App
-        div.container-fluid
-            div.navbar-header
-            div.collapse.navbar-collapse
-                ul.nav.navbar-nav
-                    li
-                        a(href='/') Home
-                    li
-                        a(href='/users') Users
-
-    div(ng-view)
+        div.container
+            div.demo-header
+                div.navbar-header
+                div
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') Home
+                        li
+                            a(href='/users') Users
+    div.container
+        div.content-container
+            div(ng-view)
 
     script(src='/components/angular/angular.min.js')
     script(src='/components/angular-resource/angular-resource.min.js')

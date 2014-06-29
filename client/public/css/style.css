@@ -1,0 +1,31 @@
+.demo-header
+{
+	background-color: #fff;
+	margin-bottom: -6px;
+	width: 100%;
+	display: inline-block;
+}
+
+body
+{
+	background-color: #f8f8f8;
+}
+
+.content-container
+{
+	background-color: #fff;
+	margin-top: -20px;
+}
+
+.navbar-demo
+{
+	background-color: #c2185b;
+	color: #fff;
+	border-radius: 0px;
+}
+
+.header-bottom-layer
+{
+	margin-bottom: 20px;
+}
+

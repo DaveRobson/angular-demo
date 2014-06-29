@@ -1,6 +1,13 @@
-div.container-fluid
+div.container
     div.row
-        div.col-md-10
+        div.col-md-12
+            table
+                tr
+                    th Firstname
+
+                tr(ng-repeat="user in users")
+                    td
+
             ul.users
                 li(ng-repeat="user in users")
                     a(href="#/users/{{user.userId}}")

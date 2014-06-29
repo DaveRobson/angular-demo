@@ -33,6 +33,13 @@ demoApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'partials/userDetail',
 				controller: 'UserDetailCtrl'
 			}
+		).when
+		(
+			'/users/delete/:id',
+			{
+				templateUrl: 'partials/userDelete',
+				controller: 'UserDeleteCtrl'
+			}
 		)
 		.otherwise(
 		{

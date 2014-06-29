@@ -17,10 +17,8 @@ services.factory('User',
 				{
 					query: { method: 'GET', isArray: true}
 				}),
-				read: $resource('/api/users/:userId', {},
-				{
-					query: { method: 'GET', params: {userId: '@userId'}}
-				})
+				action: $resource('/api/users/:userId', {userId:'@id'})
+
 			}
 		});
 

@@ -1,15 +1,31 @@
 div.container
     div.row
-        div.col-md-12
-            table
-                tr
-                    th Firstname
+        div.col-md-10
 
-                tr(ng-repeat="user in users")
-                    td
+            h1.page-header Users
 
-            ul.users
-                li(ng-repeat="user in users")
-                    a(href="#/users/{{user.userId}}")
-                        {{user.firstname}} {{user.lastname}}
+            table.table
+                thead
+                    tr
+                        th Firstname
+                        th Lastname
+                        th Email
+                        th Actions
+                tbody
+                    tr(ng-repeat="user in users")
+                        td
+                            {{user.firstname}}
+                        td
+                            {{user.lastname}}
+                        td
+                            {{user.email}}
+                        td
+                            div(dropdown, is-open='status.isopen').btn-group
+                                button(type='button').btn.btn-primary.dropdown-toggle
+                                    span.caret
+                                ul.dropdown-menu
+                                    li
+                                        a(href='/users/{{user.userId}}') Edit
+
+
 

@@ -3,7 +3,8 @@
 var demoApp = angular.module('demoApp', [
 	'ngRoute',
 	'controllers',
-	'services'
+	'services',
+	'ui.bootstrap'
 	]);
 
 demoApp.config(['$routeProvider', '$locationProvider',

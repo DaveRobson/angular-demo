@@ -4,6 +4,7 @@
 	margin-bottom: -6px;
 	width: 100%;
 	display: inline-block;
+	border-bottom: 1px solid #999;
 }
 
 body
@@ -14,18 +15,43 @@ body
 .content-container
 {
 	background-color: #fff;
-	margin-top: -20px;
+	padding-top:10px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26),
+	-5px 2px 5px rgba(0,0,0,.26), 5px 2px 5px rgba(0,0,0,.26)
+
 }
 
 .navbar-demo
 {
-	background-color: #c2185b;
+	background-color: #88C6C9;
 	color: #fff;
 	border-radius: 0px;
+	margin-bottom: 0px;
+
+
 }
 
 .header-bottom-layer
 {
 	margin-bottom: 20px;
 }
+
+.navbar-demo ul
+{
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus
+{
+	background-color: #fff;
+}
+
+.nav > li > a
+{
+	color: #999;
+}
+
+
 

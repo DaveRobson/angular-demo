@@ -16,7 +16,7 @@ var userList = [
 		'firstname': 'Laura',
 		'lastname': 'Cassar',
 		'username': 'lcassar',
-		'email': 'lcassar@gmail.com'
+		'email': 'laura-demo@gmail.com'
 	}
 ]
 

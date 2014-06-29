@@ -23,7 +23,7 @@ module.exports = function(grunt)
 		{
 			express:
 			{
-				files: ['./client/public/js/*.js'],
+				files: ['./client/public/js/**.js', './client/public/css/*.css','./server/**.*'],
 				tasks: ['express:dev'],
 				options:
 				{

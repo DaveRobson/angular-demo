@@ -11,6 +11,15 @@ demoApp.config(['$routeProvider', '$locationProvider',
 	{
 		$routeProvider.when
 		(
+			'/',
+			{
+				templateUrl: 'partials/index',
+				controller: 'IndexCtrl'
+			}
+
+		)
+		.when
+		(
 			'/users',
 			{
 				templateUrl: 'partials/users',

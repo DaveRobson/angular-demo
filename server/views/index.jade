@@ -7,11 +7,11 @@ block content
         div.container
             div.demo-header
                 div.navbar-header
-                div
+                div(ng-controller="HeaderController")
                     ul.nav.navbar-nav
-                        li
+                        li(ng-class='{ active: isActive("/")}')
                             a(href='/') Home
-                        li
+                        li(ng-class='{ active: isActive("/users")}')
                             a(href='/users') Users
     div.container
         div.content-container

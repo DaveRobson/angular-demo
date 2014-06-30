@@ -48,10 +48,20 @@ body
 	background-color: #fff;
 }
 
+.nav > li.active
+{
+	border-bottom: 2px solid #88C6C9;
+	background-color: #fff;
+}
+
 .nav > li > a
 {
 	color: #999;
 }
 
+.navbar-nav
+{
+	margin-left: 30px;
+}
 
 

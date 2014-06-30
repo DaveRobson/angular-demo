@@ -42,8 +42,6 @@ users =
 	},
 	create: function(req, res)
 	{
-
-
 		res.send(404, 'Something broke!');
 	},
 	delete: function(req, res)
@@ -58,7 +56,7 @@ users =
 			if(userList[key].userId == userId)
 			{
 				userList.splice(i, 1);
-				res.send('user deleted');
+				res.send(true);
 				return;
 			}
 
@@ -69,6 +67,21 @@ users =
 	},
 	update: function(req, res)
 	{
+		var userId = req.params.userId;
+		
+		console.log('update');
+
+		for(var key in userList)
+		{
+			console.log('UserId for update: ' + userId)
+			if(userList[key].userId == userId)
+			{
+				userList[key] = req.body;
+				res.send(true);
+				return;
+			}
+		}
+
 		res.send(404, 'Something broke!');
 	}
 

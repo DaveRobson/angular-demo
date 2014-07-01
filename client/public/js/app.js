@@ -28,17 +28,24 @@ demoApp.config(['$routeProvider', '$locationProvider',
 		)
 		.when
 		(
-			'/users/:id',
+			'/user/:id',
 			{
 				templateUrl: 'partials/userDetail',
 				controller: 'UserDetailCtrl'
 			}
 		).when
 		(
-			'/users/delete/:id',
+			'/userDelete/:id',
 			{
 				templateUrl: 'partials/userDelete',
 				controller: 'UserDeleteCtrl'
+			}
+		).when
+		(
+			'/userCreate/',
+			{
+				templateUrl: 'partials/userCreate',
+				controller: 'UserCreateCtrl'
 			}
 		)
 		.otherwise(
@@ -46,6 +53,6 @@ demoApp.config(['$routeProvider', '$locationProvider',
 			redirectTo: '/'
 		});
 
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true);//needed for express redirect
 	}
 ]);

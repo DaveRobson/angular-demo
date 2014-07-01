@@ -16,6 +16,8 @@ var userList = [
 	}
 ]
 
+var lastUserId = 2;
+
 users =
 {
 	list: function(req, res)
@@ -35,12 +37,20 @@ users =
 		else
 		{
 			//user not found
-			res.send(404, 'Something broke!');
+			res.send(404, 'User not found!'); //dev only message
 		}
 	},
 	create: function(req, res)
 	{
-		res.send(404, 'Something broke!');
+		var newUser = req.body;
+		var newUserId = lastUserId + 1; //create a new userId each time
+		lastUserId = newUserId; //increment the id
+
+		newUser.userId = newUserId;
+
+		userList.push(newUser);
+
+		res.send(true);
 	},
 	delete: function(req, res)
 	{
@@ -61,7 +71,7 @@ users =
 			i++;
 		}
 
-		res.send(404, 'Something broke!');
+		res.send(404, 'User to delete not found!'); //dev only message
 	},
 	update: function(req, res)
 	{
@@ -80,10 +90,10 @@ users =
 				}
 			}
 
-			res.send(404, 'Something broke!');
+			res.send(404, 'User to update not found!'); //dev only message
 		}
 
-		res.send(404, 'Something broke!');
+		res.send(404, 'User to update update not found!'); //dev only message
 	}
 
 }

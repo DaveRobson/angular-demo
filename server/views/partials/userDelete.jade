@@ -4,6 +4,8 @@ div.container
             h1 {{userDetail.firstname}} {{userDetail.lastname}}
 
             p.
-                Are you sure you want to delete this users?
+                Are you sure you want to delete this user?
 
-            button(ng-click='deleteUser()') Yes
+            div.demo-button-group
+                button(ng-click='deleteUser()').btn.btn-primary Yes
+                button(ng-click='cancelDelete()').btn.btn-default Cancel

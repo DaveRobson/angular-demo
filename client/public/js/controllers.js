@@ -3,6 +3,8 @@
  * Middle-man functions controlling the way the data is gathered and
  * passed to the presentation layer.
  *
+ * Two-way communication.
+ *
  */
 
 'use strict';
@@ -14,7 +16,7 @@ controllers.controller('IndexCtrl',
 		'$scope',
 		function($scope)
 		{
-
+			//blank for the initial home page
 		}
 	]
 );
@@ -25,9 +27,7 @@ controllers.controller('UsersListCtrl',
 		'User',
 		function($scope, User)
 		{
-			$scope.users = User.list.query();
-
-
+			$scope.users = User.action.query();
 		}
 	]
 );
@@ -63,6 +63,12 @@ controllers.controller('UserDeleteCtrl',
 						$location.url('/users');
 					});
 			}
+
+			$scope.cancelDelete = function()
+			{
+
+				$location.url('/users');
+			}
 		}
 	]
 );
@@ -80,6 +86,28 @@ controllers.controller('UserEditCtrl',
 			$scope.editUser = function(user)
 			{
 				User.action.update({userId: $routeParams.id}, $scope.user,
+					function()
+					{
+						$location.url('/users');
+					});
+			}
+		}
+	]
+);
+
+controllers.controller('UserCreateCtrl',
+	[
+		'$scope',
+		'$routeParams',
+		'User',
+		'$location',
+		function($scope, $routeParams, User, $location)
+		{
+			$scope.user = {};
+
+			$scope.createUser = function()
+			{
+				User.action.save($scope.user,
 					function()
 					{
 						$location.url('/users');

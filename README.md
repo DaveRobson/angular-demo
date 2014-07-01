@@ -10,3 +10,4 @@ Get it running
 * run 'npm install'
 * run 'bower install'
 * run 'grunt'
+* goto http://localhost:3000

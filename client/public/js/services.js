@@ -1,7 +1,7 @@
 /**
  *
- * webservice access object (wsao) any functions dealing with
- * communication to webservices.
+ * webservice function dealing with all interaction with the user api.
+ * $resource does all the work for use :).
  *
  */
 
@@ -13,10 +13,6 @@ services.factory('User',
 		function($resource)
 		{
 			return{
-				list: $resource('/api/users', {},
-				{
-					query: { method: 'GET', isArray: true}
-				}),
 				action: $resource('/api/users/:userId', {userId:'@userId'},
 				{
 					update: {method: 'PUT'}

@@ -1,7 +1,7 @@
 div.container
     div.row
-        div(ng-controller='UserEditCtrl').col-md-12
-            h2 Edit {{userDetail.username}}
+        div().col-md-12
+            h2 New User
             div.row
                 form(role='form').form-horizontal
                     div.form-group
@@ -22,11 +22,4 @@ div.container
                             input(ng-model='user.email', type='email', id='inputEmail', placeholder='Email Address').form-control
                     div.form-group
                         div.col-sm-offset-2.col-sm-4
-                            button(ng-click='editUser(user)').btn.btn-primary Save
-
-
-
-
-
-
-
+                            button(ng-click='createUser()').btn.btn-primary Save

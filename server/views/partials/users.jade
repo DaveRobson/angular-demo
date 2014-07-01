@@ -1,33 +1,38 @@
 div.container
-    div.row
+    div(ng-controller='UsersListCtrl').row
         div.col-md-10
 
             h1.page-header Users
 
-            table.table
-                thead
-                    tr
-                        th Firstname
-                        th Lastname
-                        th Email
-                        th Actions
-                tbody
-                    tr(ng-repeat="user in users")
-                        td
-                            {{user.firstname}}
-                        td
-                            {{user.lastname}}
-                        td
-                            {{user.email}}
-                        td
-                            div(dropdown, is-open='status.isopen').btn-group
-                                button(type='button').btn.btn-primary.dropdown-toggle
-                                    span.caret
-                                ul.dropdown-menu
-                                    li
-                                        a(href='/users/{{user.userId}}') Edit
-                                    li
-                                        a(href='/users/delete/{{user.userId}}') Delete
+            div.row
+                div.col-md-4
+                    a(href='/userCreate').btn.btn-primary New User
+            div.row
+                div.col-md-10.col-md-offset-2
+                    table.table
+                        thead
+                            tr
+                                th Firstname
+                                th Lastname
+                                th Email
+                                th Actions
+                        tbody
+                            tr(ng-repeat="user in users")
+                                td
+                                    {{user.firstname}}
+                                td
+                                    {{user.lastname}}
+                                td
+                                    {{user.email}}
+                                td
+                                    div(dropdown, is-open='status.isopen').btn-group
+                                        button(type='button').btn.btn-primary.dropdown-toggle
+                                            span.caret
+                                        ul.dropdown-menu
+                                            li
+                                                a(href='/user/{{user.userId}}') Edit
+                                            li
+                                                a(href='/userDelete/{{user.userId}}') Delete
 
 
 

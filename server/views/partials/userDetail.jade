@@ -1,7 +1,27 @@
-div.container
+div.container-fluid
     div.row
-        div.col-md-12
-            h1 {{userDetail.firstname}} {{userDetail.lastname}}
+        div(ng-controller='UserEditCtrl').col-md-12
+            h2 Edit {{userDetail.username}}
+            div.row
+                form(role='form').form-horizontal
+                    div.form-group
+                        label(for='inputFirstname').col-sm-2.control-label Firstname
+                        div.col-sm-10.col-md-4
+                            input(ng-model='user.firstname', type='text', id='inputFirstname', placeholder='Firstname').form-control
+                    div.form-group
+                        label(for='inputLastname').col-sm-2.control-label Lastname
+                        div.col-sm-10.col-md-4
+                            input(ng-model='user.lastname', type='text', id='inputLastname', placeholder='Lastname').form-control
+                    div.form-group
+                        label(for='inputEmail').col-sm-2.control-label Email Address
+                        div.col-sm-10.col-md-4
+                            input(ng-model='user.email', type='email', id='inputEmail', placeholder='Email Address').form-control
+                    div.form-group
+                        div.col-sm-offset-2.col-sm-4
+                            button(ng-click='editUser(user)').btn.btn-primary Save
+
+
+
 
 
 

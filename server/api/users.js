@@ -37,8 +37,6 @@ users =
 			//user not found
 			res.send(404, 'Something broke!');
 		}
-
-
 	},
 	create: function(req, res)
 	{
@@ -69,17 +67,20 @@ users =
 	{
 		var userId = req.params.userId;
 		
-		console.log('update');
-
-		for(var key in userList)
+		if(req.body.userId !== 'undefined')
 		{
-			console.log('UserId for update: ' + userId)
-			if(userList[key].userId == userId)
+			for(var key in userList)
 			{
-				userList[key] = req.body;
-				res.send(true);
-				return;
+				console.log('UserId for update: ' + userId)
+				if(userList[key].userId == userId)
+				{
+					userList[key] = req.body;
+					res.send(true);
+					return;
+				}
 			}
+
+			res.send(404, 'Something broke!');
 		}
 
 		res.send(404, 'Something broke!');

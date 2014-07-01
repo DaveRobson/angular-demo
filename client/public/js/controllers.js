@@ -67,6 +67,28 @@ controllers.controller('UserDeleteCtrl',
 	]
 );
 
+controllers.controller('UserEditCtrl',
+	[
+		'$scope',
+		'$routeParams',
+		'User',
+		'$location',
+		function($scope, $routeParams, User, $location)
+		{
+			$scope.user = User.action.get({userId: $routeParams.id});
+			
+			$scope.editUser = function(user)
+			{
+				User.action.update({userId: $routeParams.id}, $scope.user,
+					function()
+					{
+						$location.url('/users');
+					});
+			}
+		}
+	]
+);
+
 function HeaderController($scope, $location)
 {
 	$scope.isActive = function (viewLocation)

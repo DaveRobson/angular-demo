@@ -17,7 +17,10 @@ services.factory('User',
 				{
 					query: { method: 'GET', isArray: true}
 				}),
-				action: $resource('/api/users/:userId', {userId:'@id'})
+				action: $resource('/api/users/:userId', {userId:'@userId'},
+				{
+					update: {method: 'PUT'}
+				})
 
 			}
 		});
